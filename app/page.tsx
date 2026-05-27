@@ -237,7 +237,7 @@ export default function Home() {
             </div>
             
             <div style={{ display: 'flex', gap: '16px', overflowX: 'auto', paddingBottom: '16px', scrollSnapType: 'x mandatory', WebkitOverflowScrolling: 'touch' }}>
-              {Array.from({ length: 20 }, (_, i) => i + 1).map((num) => (
+              {Array.from({ length: 16 }, (_, i) => i + 1).map((num) => (
                 <div key={num} style={{ flexShrink: 0, background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '16px', padding: '6px', scrollSnapAlign: 'start' }}>
                   <img 
                     src={`${ASSET_BASE}/gallery-${num}.jpg`} 
