@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 
+// EXACT COMPETITION DATE FIXED
 const COMPETITION_DATE = "2026-06-02T00:00:00";
 
 const SOCIALS = [
@@ -28,8 +29,8 @@ export default function Home() {
   const [view, setView] = useState("portfolio");
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
-  // GENERATE ARRAY FOR 20 IMAGES Dynamically
-  const extendedImages = Array.from({ length: 20 }, (_, i) => `/model/gallery-${i + 1}.jpg`);
+  // READS 20 IMAGES DIRECTLY FROM THE ROOT
+  const extendedImages = Array.from({ length: 20 }, (_, i) => `/gallery-${i + 1}.jpg`);
 
   useEffect(() => {
     const target = new Date(COMPETITION_DATE).getTime();
@@ -113,7 +114,7 @@ export default function Home() {
             <div className="lg:col-span-5 order-1 lg:order-2">
               <div className="relative aspect-[4/5] w-full max-w-md mx-auto rounded-[2.5rem] overflow-hidden border border-white/10 bg-gradient-to-b from-white/5 to-transparent shadow-2xl group">
                 <img 
-                  src="/model/hero-front.jpg" 
+                  src="/hero-front.jpg" 
                   alt="Onyele Emmanuel King" 
                   className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
                   onError={(e) => { e.currentTarget.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600"; }}
@@ -157,7 +158,7 @@ export default function Home() {
             </p>
           </section>
 
-          {/* HIGH-END CURATED GRID (First 4 Key Editorial Shots) */}
+          {/* HIGH-END CURATED GRID */}
           <section className="space-y-6">
             <div className="text-center md:text-left">
               <span className="text-[10px] font-mono tracking-[0.4em] text-[#d4af37] uppercase font-black">VISUAL EDITORIAL</span>
@@ -167,8 +168,8 @@ export default function Home() {
               {[1, 2, 3, 4].map((num) => (
                 <div key={num} className="relative aspect-[3/4] bg-white/5 rounded-2xl overflow-hidden border border-white/5 group shadow-lg">
                   <img 
-                    src={`/model/gallery-${num}.jpg`} 
-                    alt={`Lookbook decoration ${num}`} 
+                    src={`/gallery-${num}.jpg`} 
+                    alt={`Lookbook documentation ${num}`} 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     onError={(e) => { e.currentTarget.src = "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?q=80&w=400"; }}
                   />
@@ -180,14 +181,13 @@ export default function Home() {
             </div>
           </section>
 
-          {/* EXTENDED CAROUSEL RUNWAY (For all remaining 20+ images) */}
+          {/* EXTENDED CAROUSEL RUNWAY */}
           <section className="space-y-4">
             <div className="px-2">
               <span className="text-[9px] font-mono tracking-[0.3em] text-[#04bd57] uppercase font-black">EXTENDED CATALOGUE</span>
               <h3 className="text-xl font-bold tracking-tight text-white">Full Lookbook Comp-Card</h3>
             </div>
             
-            {/* Horizontal Glass Slider Container */}
             <div className="flex gap-4 overflow-x-auto pb-4 pt-2 px-2 scrollbar-hide snap-x snap-mandatory">
               {extendedImages.map((src, index) => (
                 <div key={index} className="w-[180px] md:w-[240px] flex-shrink-0 aspect-[3/4] bg-white/[0.02] border border-white/5 rounded-2xl overflow-hidden snap-start relative group">
@@ -195,7 +195,7 @@ export default function Home() {
                     src={src} 
                     alt={`Extended portfolio sequence ${index + 1}`}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-102"
-                    onError={(e) => { e.currentTarget.parentElement?.remove(); }} // Automatically safely hides elements if you upload fewer than 20
+                    onError={(e) => { e.currentTarget.parentElement?.remove(); }}
                   />
                   <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-md border border-white/10 text-[8px] font-mono px-2 py-1 rounded-md text-white/60">
                     Frame {index + 1}
