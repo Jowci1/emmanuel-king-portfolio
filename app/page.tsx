@@ -281,7 +281,7 @@ export default function Home() {
 
       {/* SYSTEM DESIGN FOOTER ACKNOWLEDGEMENT */}
       <footer style={{ maxWidth: '1200px', margin: '80px auto 0 auto', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '25px', textAlign: 'center', fontSize: '11px', color: '#656b66', fontWeight: '600', letterSpacing: '0.08em' }}>
-        © 2026 ONYELE EMMANUEL KING. ALL RIGHTS RESERVED. DESIGNED BY JOWCI.
+        © ONYELE EMMANUEL KING. ALL RIGHTS RESERVED.
       </footer>
 
     </main>
