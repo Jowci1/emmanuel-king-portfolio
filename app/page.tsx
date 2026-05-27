@@ -1,7 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 
-// SET COUNTDOWN TARGET TO THE PAGEANT DATE
 const PAGEANT_DATE = "2026-06-02T00:00:00";
 const ASSET_BASE = "https://raw.githubusercontent.com/Jowci1/emmanuel-king-portfolio/main";
 
@@ -27,7 +26,6 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  // APP-WIDE STYLES FOR APPLE TYPOGRAPHY & LUXURY PALETTE
   const mainContainerStyle = {
     backgroundColor: '#030704',
     backgroundImage: 'radial-gradient(circle at 50% 0%, #0a1f11 0%, #030704 75%)',
@@ -36,7 +34,7 @@ export default function Home() {
     padding: '30px 20px',
     fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif',
     letterSpacing: '-0.01em',
-    WebkitFontSmoothing: 'antialiased'
+    WebkitFontSmoothing: 'antialiased' as const
   };
 
   const glassPanelStyle = {
@@ -56,7 +54,7 @@ export default function Home() {
     padding: '6px 14px',
     borderRadius: '100px',
     fontSize: '12px',
-    fontWeight: '600',
+    fontWeight: '600' as const,
     letterSpacing: '0.05em',
     textTransform: 'uppercase' as const,
     display: 'inline-block'
@@ -65,14 +63,12 @@ export default function Home() {
   return (
     <main style={mainContainerStyle}>
       
-      {/* BRAND HEADER NAVIGATION */}
       <header style={{ maxWidth: '1200px', margin: '0 auto 50px auto', display: 'flex', flexDirection: 'column', gap: '20px', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '25px', textAlign: 'center' }}>
         <div>
           <h1 style={{ fontSize: '26px', fontWeight: '800', letterSpacing: '0.1em', margin: 0, textTransform: 'uppercase', color: '#ffffff' }}>ONYELE EMMANUEL KING</h1>
           <p style={{ color: '#d4af37', fontSize: '12px', fontWeight: '700', margin: '5px 0 0 0', letterSpacing: '0.15em' }}>MR ECO INTERNATIONAL NIGERIA 2026</p>
         </div>
         
-        {/* NATIVE NAVIGATION SWITCHES */}
         <div style={{ display: 'flex', background: 'rgba(255,255,255,0.05)', padding: '4px', borderRadius: '10px', border: '1px solid rgba(255,255,255,0.08)' }}>
           <button onClick={() => setView("portfolio")} style={{ padding: '10px 24px', border: 'none', borderRadius: '8px', cursor: 'pointer', fontWeight: '600', fontSize: '13px', transition: '0.2s', background: view === 'portfolio' ? 'rgba(255,255,255,0.1)' : 'transparent', color: view === 'portfolio' ? '#ffffff' : '#a0a5a1' }}>PORTFOLIO</button>
           <button onClick={() => setView("hub")} style={{ padding: '10px 24px', border: 'none', borderRadius: '8px', cursor: 'pointer', fontWeight: '600', fontSize: '13px', transition: '0.2s', background: view === 'hub' ? 'rgba(255,255,255,0.1)' : 'transparent', color: view === 'hub' ? '#ffffff' : '#a0a5a1' }}>CONNECT HUB</button>
@@ -82,10 +78,8 @@ export default function Home() {
       {view === "portfolio" ? (
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '40px' }}>
           
-          {/* INTRO HERO GRID */}
           <section style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '40px', alignItems: 'center' }}>
             
-            {/* HERO BIO BLOCK */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
               <div>
                 <span style={emeraldBadgeStyle}>✦ Official Representative</span>
@@ -97,19 +91,21 @@ export default function Home() {
 
               <div style={{ ...glassPanelStyle, padding: '25px' }}>
                 <h3 style={{ margin: '0 0 10px 0', fontSize: '18px', fontWeight: '700', color: '#d4af37' }}>Summary Biography</h3>
-                <p style={{ color: '#cbd5e1', fontSize: '14.5px', lineHeight: '1.6', margin: 0, fontWeight: '400' }}>
+                <p style={{ color: '#cbd5e1', fontSize: '14.5px', lineHeight: '1.6', margin: '0 0 12px 0', fontWeight: '400' }}>
                   My name is Onyele Emmanuel King, a Nigerian model, actor, and public figure currently serving as Mr Eco International Nigeria 2026. My journey in the entertainment and pageantry industry has been one of growth, resilience, and continuous self-development.
                 </p>
-                <p style={{ color: '#cbd5e1', fontSize: '14.5px', lineHeight: '1.6', margin: '12px 0 0 0', fontWeight: '400' }}>
+                <p style={{ color: '#cbd5e1', fontSize: '14.5px', lineHeight: '1.6', margin: '0 0 12px 0', fontWeight: '400' }}>
+                  In 2021, I contested in Mr Paragon Nigeria where I emerged as the First Runner-Up. In 2022, I participated in my first national pageant, Misters of Nigeria, where I finished as a Top 7 finalist. That same year, I also worked as a runway model at the Lagos QFashion Fair 2022, expanding my experience in the fashion industry.
+                </p>
+                <p style={{ color: '#cbd5e1', fontSize: '14.5px', lineHeight: '1.6', margin: '0 0 12px 0', fontWeight: '400' }}>
                   Beyond pageantry and modeling, I am also involved in commercial projects and acting, with movie features currently showing on YouTube. These experiences have helped shape my confidence, communication skills, stage presence, and ability to connect with diverse audiences.
                 </p>
-                <p style={{ color: '#cbd5e1', fontSize: '14.5px', lineHeight: '1.6', margin: '12px 0 0 0', fontWeight: '400' }}>
+                <p style={{ color: '#cbd5e1', fontSize: '14.5px', lineHeight: '1.6', margin: 0, fontWeight: '400' }}>
                   As I prepare to represent Nigeria at Mr Eco International, I remain passionate about using my platform to promote environmental sustainability, youth empowerment, leadership, and positive representation of Nigerian culture on the global stage.
                 </p>
               </div>
             </div>
 
-            {/* HERO PORTRAIT & GLASS COUNTDOWN */}
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
               <div style={{ ...glassPanelStyle, padding: '12px', width: '100%', maxWidth: '400px' }}>
                 <img 
@@ -127,7 +123,6 @@ export default function Home() {
 
           </section>
 
-          {/* PHYSICAL SPECIFICATIONS & VITALS METRICS */}
           <section style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '15px' }}>
             <div style={{ ...glassPanelStyle, padding: '20px', textAlign: 'center' }}>
               <span style={{ color: '#a0a5a1', fontSize: '11px', fontWeight: '600', display: 'block', marginBottom: '5px' }}>HEIGHT</span>
@@ -147,7 +142,6 @@ export default function Home() {
             </div>
           </section>
 
-          {/* ADVOCACY BANNER */}
           <section style={{ ...glassPanelStyle, borderLeft: '4px solid #04bd57', padding: '25px' }}>
             <span style={{ color: '#04bd57', fontSize: '11px', fontWeight: '700', letterSpacing: '0.1em', display: 'block', marginBottom: '5px' }}>OFFICIAL ADVOCACY PROJECT</span>
             <h3 style={{ margin: '0 0 8px 0', fontSize: '22px', fontWeight: '800' }}>Green Community Project (GCP)</h3>
@@ -156,7 +150,6 @@ export default function Home() {
             </p>
           </section>
 
-          {/* PROFESSIONAL TIMELINE & PLACEMENTS */}
           <section style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '30px' }}>
             
             <div style={glassPanelStyle}>
@@ -174,7 +167,7 @@ export default function Home() {
                 </div>
                 <div style={{ borderLeft: '2px solid rgba(255,255,255,0.2)', paddingLeft: '15px' }}>
                   <span style={{ fontSize: '12px', fontWeight: '700', color: '#a0a5a1' }}>2022</span>
-                  <h4 style={{ margin: '3px 0', fontSize: '16px', fontWeight: '700' }}>Lagos QFashion Fair</h4>
+                  <h4 style={{ margin: '3px 0', fontSize: '16px', fontWeight: '700' }}>Lagos QFashion Fair 2022</h4>
                   <p style={{ margin: 0, fontSize: '13.5px', color: '#cbd5e1' }}>Runway Elite Performance Model.</p>
                 </div>
                 <div style={{ borderLeft: '2px solid rgba(255,255,255,0.2)', paddingLeft: '15px' }}>
@@ -197,7 +190,6 @@ export default function Home() {
 
           </section>
 
-          {/* INTERESTS & ENGAGEMENTS */}
           <section style={glassPanelStyle}>
             <h3 style={{ fontSize: '20px', fontWeight: '800', color: '#ffffff', marginBottom: '15px' }}>Core Engagements & Focus Areas</h3>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
@@ -207,7 +199,6 @@ export default function Home() {
             </div>
           </section>
 
-          {/* COMPREHENSIVE HORIZONTAL PORTFOLIO GALLEY LOOKBOOK */}
           <section style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <h3 style={{ fontSize: '22px', fontWeight: '800', letterSpacing: '-0.02em' }}>Lookbook Catalogue Portfolio</h3>
@@ -231,7 +222,6 @@ export default function Home() {
         </div>
       ) : (
         
-        /* FULL SOCIAL LINK CONNECTIONS & BOOKING HUB */
         <div style={{ maxWidth: '600px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '25px' }}>
           
           <div style={{ ...glassPanelStyle, textAlign: 'center' }}>
@@ -253,7 +243,6 @@ export default function Home() {
             ))}
           </div>
 
-          {/* SYSTEM MANAGEMENT & COMMUNICATIONS DISPATCH */}
           <div style={{ ...glassPanelStyle, border: '1px solid rgba(212, 175, 55, 0.25)', display: 'flex', flexDirection: 'column', gap: '15px' }}>
             <h4 style={{ margin: 0, fontSize: '18px', fontWeight: '800', color: '#d4af37' }}>Management, Bookings & Features</h4>
             <p style={{ margin: 0, color: '#cbd5e1', fontSize: '14px', lineHeight: '1.5' }}>
@@ -267,7 +256,7 @@ export default function Home() {
               </div>
               <div style={{ background: 'rgba(255,255,255,0.02)', padding: '12px 15px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', fontSize: '14px' }}>
                 <span style={{ color: '#a0a5a1', display: 'block', fontSize: '11px', fontWeight: '600' }}>SECURE HOTLINE</span>
-                <strong>+234 703 340 2271</strong>
+                <strong>07033402271</strong>
               </div>
             </div>
 
@@ -279,7 +268,6 @@ export default function Home() {
         </div>
       )}
 
-      {/* SYSTEM DESIGN FOOTER ACKNOWLEDGEMENT */}
       <footer style={{ maxWidth: '1200px', margin: '80px auto 0 auto', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '25px', textAlign: 'center', fontSize: '11px', color: '#656b66', fontWeight: '600', letterSpacing: '0.08em' }}>
         © 2026 ONYELE EMMANUEL KING. ALL RIGHTS RESERVED. DESIGNED BY JOWCI.
       </footer>
