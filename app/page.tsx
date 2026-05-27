@@ -29,8 +29,8 @@ export default function Home() {
   const [view, setView] = useState("portfolio");
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
-  // PULLS DIRECTLY FROM YOUR MAIN REPOSITORY ROOT
-  const extendedImages = Array.from({ length: 20 }, (_, i) => `gallery-${i + 1}.jpg`);
+  // ROUTING PATH FIXED TO FETCH FROM ROOT DIRECTORY
+  const extendedImages = Array.from({ length: 20 }, (_, i) => `../gallery-${i + 1}.jpg`);
 
   useEffect(() => {
     const target = new Date(COMPETITION_DATE).getTime();
@@ -54,7 +54,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main style={{ backgroundColor: '#030704', color: 'white', minHeight: 'screen', padding: '20px', fontFamily: 'sans-serif' }}>
+    <main style={{ backgroundColor: '#030704', color: 'white', minHeight: '100vh', padding: '20px', fontFamily: 'sans-serif' }}>
       
       {/* HEADER */}
       <nav style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.1)', paddingBottom: '20px' }}>
@@ -92,12 +92,12 @@ export default function Home() {
             {/* HERO IMAGE */}
             <div style={{ flex: '1', minWidth: '300px', textAlign: 'center' }}>
               <img 
-                src="hero-front.jpg" 
+                src="../gallery-1.jpg" 
                 alt="Emmanuel King" 
                 style={{ width: '100%', maxWidth: '350px', borderRadius: '20px', border: '1px solid rgba(255,255,255,0.1)' }}
                 onError={(e) => { e.currentTarget.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=600"; }}
               />
-              <div style={{ background: 'black', padding: '15px', borderRadius: '10px', marginTop: '15px', inlineSize: 'max-content', margin: '15px auto' }}>
+              <div style={{ background: 'black', padding: '15px', borderRadius: '10px', marginTop: '15px', display: 'inline-block', margin: '15px auto' }}>
                 <p style={{ color: '#d4af37', margin: '0 0 5px 0', fontSize: '11px', fontWeight: 'bold' }}>COUNTDOWN TO PAGEANT</p>
                 <span style={{ fontSize: '18px', fontWeight: 'bold' }}>{timeLeft.days}d : {timeLeft.hours}h : {timeLeft.minutes}m</span>
               </div>
@@ -111,10 +111,9 @@ export default function Home() {
               {[1, 2, 3, 4].map((num) => (
                 <img 
                   key={num}
-                  src={`gallery-${num}.jpg`} 
+                  src={`../gallery-${num}.jpg`} 
                   alt="Showcase item" 
                   style={{ width: '100%', borderRadius: '10px', objectFit: 'cover', aspectRatio: '3/4' }}
-                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
                 />
               ))}
             </div>
@@ -130,7 +129,6 @@ export default function Home() {
                   src={src} 
                   alt="Catalogue item" 
                   style={{ height: '250px', borderRadius: '10px', flexShrink: 0 }}
-                  onError={(e) => { e.currentTarget.style.display = 'none'; }}
                 />
               ))}
             </div>
