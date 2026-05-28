@@ -288,7 +288,7 @@ export default function Home() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginTop: '4px' }}>
               <div style={{ background: 'rgba(255,255,255,0.015)', padding: '14px 18px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)', fontSize: '14.5px' }}>
                 <span style={{ color: '#a0a5a1', display: 'block', fontSize: '11px', fontWeight: 600, letterSpacing: '0.05em', marginBottom: '2px' }}>CONTACT EMAIL</span>
-                <strong style={{ color: '#ffffff' }}>nonsoking@gmail.com</strong>
+                <strong style={{ color: '#ffffff' }}>nonsoking799@gmail.com</strong>
               </div>
               <div style={{ background: 'rgba(255,255,255,0.015)', padding: '14px 18px', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)', fontSize: '14.5px' }}>
                 <span style={{ color: '#a0a5a1', display: 'block', fontSize: '11px', fontWeight: 600, letterSpacing: '0.05em', marginBottom: '2px' }}>SECURE WHATSAPP DISPATCH</span>
